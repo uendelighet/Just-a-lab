@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "http://localhost:3000";
+const BASE = "just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
 
 interface Store { id: string; name: string; is_open: boolean; }
 interface Product { id: string; name: string; price: number; }

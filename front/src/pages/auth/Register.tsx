@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE = "http://localhost:3000";
+const BASE = "just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
 
 export const Register = () => {
   const navigate = useNavigate();
