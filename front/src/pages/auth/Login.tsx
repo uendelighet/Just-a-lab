@@ -2,9 +2,7 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
-export const Login = () => {
-  const navigate = useNavigate();
+const BASE = "https://just-a-labback.vercel.app";  const navigate = useNavigate();
   const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

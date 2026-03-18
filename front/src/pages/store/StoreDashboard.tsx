@@ -2,9 +2,7 @@ import { useEffect, useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
-
-interface Store { id: string; name: string; is_open: boolean; }
+const BASE = "https://just-a-labback.vercel.app";interface Store { id: string; name: string; is_open: boolean; }
 interface Product { id: string; name: string; price: number; }
 interface OrderItem { quantity: number; products: { name: string; price: number; }; }
 interface Order { id: string; status: string; consumer_id: string; order_items: OrderItem[]; }

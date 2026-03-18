@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
-
-interface OrderItem { quantity: number; products: { name: string; price: number; }; }
+const BASE = "https://just-a-labback.vercel.app";interface OrderItem { quantity: number; products: { name: string; price: number; }; }
 interface Order { id: string; status: string; stores: { name: string; }; order_items: OrderItem[]; }
 
 export const DeliveryDashboard = () => {
