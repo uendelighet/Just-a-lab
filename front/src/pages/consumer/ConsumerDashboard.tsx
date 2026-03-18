@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
-
+const BASE = "https://just-a-labback-ahhnq3tyf-uendelighets-projects.vercel.app";
 interface Store { id: string; name: string; is_open: boolean; }
 interface Product { id: string; name: string; price: number; }
 interface CartItem { product_id: string; name: string; quantity: number; }
