@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback.vercel.app";interface OrderItem { quantity: number; products: { name: string; price: number; }; }
+const BASE = "https://just-a-labback.vercel.app";
+
+interface OrderItem { quantity: number; products: { name: string; price: number; }; }
 interface Order { id: string; status: string; stores: { name: string; }; order_items: OrderItem[]; }
 
 export const DeliveryDashboard = () => {
@@ -46,7 +48,6 @@ export const DeliveryDashboard = () => {
     <div>
       <h1>Welcome, {user?.name}</h1>
       <button onClick={handleLogout}>Logout</button>
-
       <h2>Available Orders</h2>
       {available.length === 0 && <p>No available orders</p>}
       {available.map((order) => (
@@ -59,7 +60,6 @@ export const DeliveryDashboard = () => {
           <button onClick={() => declineOrder(order.id)}>Decline</button>
         </div>
       ))}
-
       <h2>My Accepted Orders</h2>
       {accepted.length === 0 && <p>No accepted orders yet</p>}
       {accepted.map((order) => (

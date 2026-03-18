@@ -1,8 +1,9 @@
-import { useEffect, useState, FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState, type FormEvent } from "react";import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback.vercel.app";interface Store { id: string; name: string; is_open: boolean; }
+const BASE = "https://just-a-labback.vercel.app";
+
+interface Store { id: string; name: string; is_open: boolean; }
 interface Product { id: string; name: string; price: number; }
 interface OrderItem { quantity: number; products: { name: string; price: number; }; }
 interface Order { id: string; status: string; consumer_id: string; order_items: OrderItem[]; }
@@ -71,10 +72,8 @@ export const StoreDashboard = () => {
     <div>
       <h1>{store?.name} Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
-
       <h2>Store Status: {store?.is_open ? "🟢 Open" : "🔴 Closed"}</h2>
       <button onClick={toggleStore}>{store?.is_open ? "Close Store" : "Open Store"}</button>
-
       <h2>Create Product</h2>
       <form onSubmit={createProduct}>
         <input placeholder="Product name" value={form.name}
@@ -83,7 +82,6 @@ export const StoreDashboard = () => {
           onChange={(e) => setForm({ ...form, price: e.target.value })} />
         <button type="submit">Create</button>
       </form>
-
       <h2>Products</h2>
       {products.length === 0 && <p>No products yet</p>}
       {products.map((p) => (
@@ -92,7 +90,6 @@ export const StoreDashboard = () => {
           <button onClick={() => deleteProduct(p.id)}>Delete</button>
         </div>
       ))}
-
       <h2>Incoming Orders</h2>
       {orders.length === 0 && <p>No orders yet</p>}
       {orders.map((order) => (

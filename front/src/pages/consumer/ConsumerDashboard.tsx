@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-const BASE = "https://just-a-labback.vercel.app";interface Product { id: string; name: string; price: number; }
+const BASE = "https://just-a-labback.vercel.app";
+
+interface Store { id: string; name: string; is_open: boolean; }
+interface Product { id: string; name: string; price: number; }
 interface CartItem { product_id: string; name: string; quantity: number; }
 interface Order { order_id: string; product_name: string; quantity: number; status: string; }
 
@@ -113,7 +116,6 @@ export const ConsumerDashboard = () => {
               <button onClick={() => addToCart(p)}>Add</button>
             </div>
           ))}
-
           <h3>Cart</h3>
           {cart.length === 0 && <p>Empty cart</p>}
           {cart.map((item) => (
