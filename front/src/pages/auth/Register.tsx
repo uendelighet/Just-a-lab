@@ -1,7 +1,9 @@
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE = "https://just-a-labback.vercel.app";export const Register = () => {
+const BASE = "https://just-a-labback.vercel.app";
+
+export const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
